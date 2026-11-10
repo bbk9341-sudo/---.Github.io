@@ -1,39 +1,55 @@
-// แสดงข้อความต้อนรับเมื่อเปิดเว็บไซต์
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Welcome to Pongsatorn Portfolio!");
 
-    // ทำให้เมนูเลื่อนไปยังหัวข้อที่เลือก
-    const menuLinks = document.querySelectorAll('.navbar a');
+    console.log("Animal Science Portfolio is ready!");
 
-    menuLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
+    // เมนูโทรศัพท์
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-            if (target) {
-                event.preventDefault();
+    menuBtn.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
 
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+        menuBtn.textContent = isOpen ? "✕" : "☰";
+        menuBtn.setAttribute("aria-expanded", isOpen);
+    });
+
+    // ปิดเมนูเมื่อคลิกหัวข้อ
+    document.querySelectorAll("#navLinks a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            menuBtn.textContent = "☰";
+            menuBtn.setAttribute("aria-expanded", "false");
         });
     });
 
-    // เอฟเฟกต์แสดงเนื้อหาเมื่อเลื่อนหน้าจอ
-    const sections = document.querySelectorAll('.section, .hero');
-
+    // Animation ตอนเลื่อนหน้าเว็บ
     const observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                entry.target.classList.add('show');
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.12
     });
 
-    sections.forEach(function (section) {
-        observer.observe(section);
+    document.querySelectorAll(".reveal").forEach(function (element) {
+        observer.observe(element);
     });
+
+    // ปุ่มกลับขึ้นด้านบน
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", function () {
+        backTop.classList.toggle("show", window.scrollY > 400);
+    });
+
+    backTop.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
 });
