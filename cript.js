@@ -1,56 +1,46 @@
-// =========================
-// MOBILE MENU
-// =========================
+// แสดงปีปัจจุบันในส่วนท้ายเว็บไซต์
+document.getElementById("year").textContent = new Date().getFullYear();
 
+
+// ระบบเปิด-ปิดเมนูบนมือถือ
 const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
 });
 
-// ปิดเมนูเมื่อกดเลือกลิงก์
-const navLinks = document.querySelectorAll("#navMenu a");
-
-navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
+// ปิดเมนูเมื่อกดลิงก์
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
     });
 });
 
 
-// =========================
-// SCROLL REVEAL ANIMATION
-// =========================
-
+// เอฟเฟกต์แสดงเนื้อหาเมื่อเลื่อนหน้าจอ
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
-            }
-        });
-    },
-    {
-        threshold: 0.15
-    }
-);
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
 
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
+revealElements.forEach(function (element) {
+    observer.observe(element);
 });
 
 
-// =========================
-// BACK TO TOP BUTTON
-// =========================
-
+// ปุ่มกลับขึ้นด้านบน
 const backToTop = document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", function () {
     if (window.scrollY > 400) {
         backToTop.style.display = "block";
     } else {
@@ -58,7 +48,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-backToTop.addEventListener("click", () => {
+backToTop.addEventListener("click", function () {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
