@@ -1,55 +1,66 @@
-document.addEventListener("DOMContentLoaded", function () {
+// =========================
+// MOBILE MENU
+// =========================
 
-    console.log("Animal Science Portfolio is ready!");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-    // เมนูโทรศัพท์
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
 
-    menuBtn.addEventListener("click", function () {
-        const isOpen = navLinks.classList.toggle("open");
+// ปิดเมนูเมื่อกดเลือกลิงก์
+const navLinks = document.querySelectorAll("#navMenu a");
 
-        menuBtn.textContent = isOpen ? "✕" : "☰";
-        menuBtn.setAttribute("aria-expanded", isOpen);
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
     });
+});
 
-    // ปิดเมนูเมื่อคลิกหัวข้อ
-    document.querySelectorAll("#navLinks a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("open");
-            menuBtn.textContent = "☰";
-            menuBtn.setAttribute("aria-expanded", "false");
-        });
-    });
 
-    // Animation ตอนเลื่อนหน้าเว็บ
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.12
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});
+
+
+// =========================
+// BACK TO TOP BUTTON
+// =========================
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
-
-    document.querySelectorAll(".reveal").forEach(function (element) {
-        observer.observe(element);
-    });
-
-    // ปุ่มกลับขึ้นด้านบน
-    const backTop = document.getElementById("backTop");
-
-    window.addEventListener("scroll", function () {
-        backTop.classList.toggle("show", window.scrollY > 400);
-    });
-
-    backTop.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
 });
