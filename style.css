@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background: #f5f8f5;
+    color: #26352d;
+    line-height: 1.7;
+}
+
+.navbar {
+    background: #173f32;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #b8e6c9;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 70px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(120deg, #e1f1e5, #f7faf6);
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.welcome {
+    color: #43835d;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #173f32;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.hero h2 span {
+    color: #43835d;
+}
+
+.hero p {
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #286747;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #173f32;
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    width: 320px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 7px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.section {
+    padding: 75px 10%;
+    text-align: center;
+}
+
+.section-title {
+    color: #173f32;
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #69a77e;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.about-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    text-align: left;
+    max-width: 850px;
+    margin: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.about-card img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-info h3 {
+    color: #286747;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-info p {
+    margin: 8px 0;
+}
+
+.education {
+    background: #e8f2eb;
+}
+
+.education-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.education-card {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.education-card h3 {
+    color: #286747;
+}
+
+.education-card h2 {
+    color: #43835d;
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.activity-card {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.activity-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.activity-card h3 {
+    color: #286747;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.motto {
+    background: #e8f2eb;
+}
+
+.quote {
+    max-width: 750px;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 500;
+    color: #286747;
+}
+
+.goal-card {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.goal-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.goal-card h3 {
+    color: #286747;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #173f32;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer h3 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* แสดงผลบนโทรศัพท์ */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 7%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 300px;
+    }
+
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-card img {
+        width: 220px;
+        height: 260px;
+    }
+
+    .section {
+        padding: 55px 7%;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .quote {
+        font-size: 19px;
+    }
+
+    .goal-card {
+        padding: 25px;
+    }
+}
