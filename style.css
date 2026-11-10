@@ -1,641 +1,480 @@
-/* ตั้งค่าพื้นฐาน */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --green: #123c2c;
-    --green-light: #245b40;
-    --gold: #d9b66f;
-    --cream: #f6f5ed;
-    --white: #ffffff;
-    --gray: #68736b;
+  --green: #173d2b;
+  --green-dark: #0c2519;
+  --green-light: #eaf1e9;
+  --gold: #d7b45a;
+  --text: #26352b;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Kanit', sans-serif;
-    background: var(--cream);
-    color: #243329;
-    line-height: 1.8;
+  font-family: 'Kanit', sans-serif;
+  color: var(--text);
+  background: #f8faf7;
+  line-height: 1.8;
 }
 
 .container {
-    width: 90%;
-    max-width: 1150px;
-    margin: auto;
+  width: min(1100px, 90%);
+  margin: auto;
 }
 
-/* ส่วนหัวและพื้นหลัง */
-.hero {
-    min-height: 720px;
-    height: 100vh;
-    position: relative;
-    color: white;
-    background:
-        url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=2000&q=85")
-        center / cover no-repeat;
+/* HEADER */
+.header {
+  background: var(--green-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.18);
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(7, 31, 21, 0.94),
-        rgba(7, 31, 21, 0.65),
-        rgba(7, 31, 21, 0.25)
-    );
-}
-
-/* เมนู */
 .navbar {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    padding: 18px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(13, 43, 31, 0.88);
-    border-bottom: 1px solid rgba(217, 182, 111, 0.3);
+  min-height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    color: var(--gold);
-    font-size: 21px;
-    font-weight: 700;
-    text-decoration: none;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .nav-links {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+  color: var(--gold);
 }
 
 .menu-toggle {
-    display: none;
-    color: white;
-    border: none;
-    background: none;
-    font-size: 27px;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
 }
 
-/* ข้อความหน้าหลัก */
+/* HERO */
+.hero {
+  min-height: 570px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(8, 32, 19, 0.65), rgba(8, 32, 19, 0.75)),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85')
+    center/cover no-repeat;
+}
+
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1150px;
-    width: 90%;
-    margin: auto;
-    padding-top: 260px;
+  position: relative;
+  z-index: 1;
+  padding: 70px 0;
 }
 
-.welcome {
-    color: var(--gold);
-    letter-spacing: 5px;
-    font-size: 14px;
+.hero-small {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 14px;
 }
 
-.hero-content h1 {
-    font-size: clamp(45px, 8vw, 90px);
-    line-height: 1.2;
-    letter-spacing: 3px;
+.hero h1 {
+  font-size: clamp(32px, 6vw, 55px);
+  margin-top: 12px;
 }
 
-.hero-content h1 span {
-    color: var(--gold);
+.hero h2 {
+  color: var(--gold);
+  font-size: clamp(30px, 5vw, 48px);
+  letter-spacing: 5px;
 }
 
-.hero-content h2 {
-    font-size: 25px;
-    margin: 15px 0;
+.hero-content > p:not(.hero-small) {
+  margin: 12px 0 28px;
 }
 
-.hero-content p {
-    max-width: 550px;
-    color: #e5e9e5;
+.btn {
+  display: inline-block;
+  padding: 11px 30px;
+  color: var(--green-dark);
+  background: var(--gold);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 11px 28px;
-    border-radius: 30px;
-    background: var(--gold);
-    color: var(--green);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+.btn:hover {
+  transform: translateY(-3px);
+  background: white;
 }
 
-.button:hover {
-    background: white;
-    transform: translateY(-4px);
-}
-
-.hero-bottom {
-    position: absolute;
-    bottom: 25px;
-    left: 5%;
-    color: #e4e9e3;
-    font-size: 11px;
-    letter-spacing: 3px;
-}
-
-/* ส่วนเนื้อหา */
+/* GENERAL SECTION */
 .section {
-    padding: 85px 5%;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
-.light-section {
-    background: #e9eee6;
+.section-light {
+  background: var(--green-light);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
+.section-heading {
+  text-align: center;
+  margin-bottom: 38px;
 }
 
-.section-title span {
-    color: #a58a4e;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 4px;
+.section-heading span {
+  color: #a47d24;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
-.section-title h2 {
-    color: var(--green);
-    font-size: 34px;
-    margin: 5px 0;
+.section-heading h2 {
+  color: var(--green);
+  font-size: 30px;
+  margin: 5px 0;
 }
 
-.section-title p {
-    color: var(--gray);
+.section-heading p {
+  color: #718074;
+  font-size: 14px;
 }
 
-/* ประวัติส่วนตัว */
-.profiles {
-    max-width: 1050px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+/* PROFILE */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
 }
 
 .profile-card {
-    display: grid;
-    grid-template-columns: 42% 58%;
-    background: white;
-    border-radius: 17px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(18, 60, 44, 0.1);
-    transition: 0.3s;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 7px 25px rgba(18, 48, 29, 0.1);
+  border-bottom: 4px solid var(--gold);
 }
 
-.profile-card:hover {
-    transform: translateY(-6px);
-}
-
-.profile-card img {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    object-fit: cover;
+.profile-img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #e5e9e3;
 }
 
 .profile-info {
-    padding: 25px 20px;
-}
-
-.student-label {
-    color: #a58a4e;
-    font-size: 11px;
-    letter-spacing: 2px;
+  padding: 22px 15px;
 }
 
 .profile-info h3 {
-    color: var(--green);
-    font-size: 19px;
-    margin: 7px 0 15px;
+  color: var(--green);
+  font-size: 21px;
+  margin-bottom: 8px;
 }
 
 .profile-info p {
-    color: var(--gray);
-    font-size: 13px;
-    margin-bottom: 5px;
+  font-size: 14px;
+  margin: 3px 0;
 }
 
-/* การศึกษา */
-.education-list {
-    max-width: 850px;
-    margin: auto;
-    display: grid;
-    gap: 20px;
+.about-text {
+  margin-top: 30px;
+  padding: 28px;
+  border-radius: 15px;
+  background: white;
+  border-left: 5px solid var(--gold);
+  box-shadow: 0 5px 20px rgba(18, 48, 29, 0.07);
 }
 
-.education-card {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    border-left: 5px solid var(--gold);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+.about-text h3 {
+  color: var(--green);
+  margin-bottom: 8px;
 }
 
-.education-icon {
-    font-size: 35px;
-    min-width: 60px;
-    height: 60px;
-    display: grid;
-    place-items: center;
-    background: #edf3e9;
-    border-radius: 50%;
+/* CARDS */
+.education-grid,
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
-.education-card h3 {
-    color: var(--green);
-    font-size: 18px;
+.skills-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.education-card p {
-    color: var(--gray);
-    font-size: 14px;
+.info-card {
+  padding: 28px 22px;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(18, 48, 29, 0.08);
+  border-bottom: 3px solid var(--gold);
 }
 
-/* กิจกรรม */
+.card-icon {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.info-card h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.info-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.info-card strong {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 18px;
+  background: var(--green-light);
+  color: var(--green);
+  border-radius: 20px;
+}
+
+/* ACTIVITIES */
 .activity-grid {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
 .activity-card {
-    background: white;
-    border-radius: 17px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(18, 60, 44, 0.08);
-    transition: 0.3s;
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(18, 48, 29, 0.08);
+  border-left: 4px solid var(--gold);
+  transition: 0.3s;
 }
 
 .activity-card:hover {
-    transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
-.activity-picture {
-    height: 210px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
+.activity-icon {
+  font-size: 35px;
+  margin-bottom: 8px;
 }
 
-.activity-picture::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 40, 27, 0.55);
+.activity-card h3 {
+  color: var(--green);
+  font-size: 19px;
+  margin-bottom: 8px;
 }
 
-.activity-picture span {
-    position: relative;
-    color: white;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 3px;
+.activity-card p {
+  color: #5c685f;
+  font-size: 14px;
 }
 
-.volunteer {
-    background-image: url("https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=80");
+/* HOBBIES */
+.hobby-box {
+  text-align: center;
+  margin-top: 28px;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
 }
 
-.asean {
-    background-image: url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80");
+.hobby-box h3 {
+  color: var(--green);
+  margin-bottom: 8px;
 }
 
-.band {
-    background-image: url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=80");
-}
-
-.mangrove {
-    background-image: url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80");
-}
-
-.activity-info {
-    padding: 25px;
-}
-
-.activity-info h3 {
-    color: var(--green);
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.activity-info p {
-    color: var(--gray);
-    font-size: 13px;
-    margin-bottom: 12px;
-}
-
-.activity-info strong {
-    color: var(--green-light);
-}
-
-/* ทักษะ */
-.skills-grid {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.skill-card {
-    padding: 30px 15px;
-    text-align: center;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(18, 60, 44, 0.07);
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-7px);
-    border-bottom: 4px solid var(--gold);
-}
-
-.skill-card div {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-.skill-card h3 {
-    color: var(--green);
-    font-size: 18px;
-}
-
-.skill-card p {
-    color: var(--gray);
-    font-size: 13px;
-}
-
-/* เป้าหมาย */
+/* GOAL */
 .goal-section {
-    position: relative;
-    padding: 100px 5%;
-    text-align: center;
-    color: white;
-    background:
-        url("https://images.unsplash.com/photo-1546445317-29f2c7e0c6a9?auto=format&fit=crop&w=2000&q=85")
-        center / cover no-repeat;
-}
-
-.goal-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(8, 42, 28, 0.88);
+  position: relative;
+  padding: 90px 0;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(8, 32, 19, 0.82), rgba(8, 32, 19, 0.88)),
+    url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1800&q=85')
+    center/cover no-repeat;
 }
 
 .goal-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .goal-content > span {
-    color: var(--gold);
-    letter-spacing: 4px;
-    font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 13px;
 }
 
 .goal-content h2 {
-    font-size: 36px;
-    margin: 10px 0;
-}
-
-.animal-icons {
-    font-size: 42px;
-    margin: 15px 0;
+  font-size: 32px;
+  margin: 8px 0 15px;
 }
 
 .goal-content h3 {
-    color: var(--gold);
-    font-size: 23px;
-    margin-bottom: 15px;
+  color: var(--gold);
+  font-size: 23px;
+  margin-bottom: 15px;
 }
 
 .goal-content p {
-    color: #e5eee6;
-    margin-bottom: 15px;
+  max-width: 780px;
+  margin: auto;
+  font-size: 15px;
 }
 
-/* คติประจำใจ */
-.motto-section {
-    padding: 80px 5%;
-    background:
-        linear-gradient(rgba(246, 245, 237, 0.94), rgba(246, 245, 237, 0.94)),
-        url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=80")
-        center / cover;
+.quote {
+  margin: 35px auto 0;
+  max-width: 700px;
+  padding: 20px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  color: var(--gold);
+  font-size: 18px;
 }
 
-.motto-section .section-title {
-    margin-bottom: 0;
+/* FOOTER */
+.footer {
+  padding: 35px 15px;
+  text-align: center;
+  color: white;
+  background: var(--green-dark);
 }
 
-.motto-section .section-title p {
-    color: var(--green);
-    font-size: 21px;
-    font-weight: 500;
-    margin-top: 15px;
+.footer h3 {
+  color: var(--gold);
+  margin-bottom: 10px;
 }
 
-/* ส่วนท้าย */
-footer {
-    padding: 45px 20px;
-    text-align: center;
-    color: white;
-    background: #0c2b1e;
+.footer p {
+  font-size: 14px;
 }
 
-footer h2 {
-    color: var(--gold);
-    font-size: 28px;
-    letter-spacing: 4px;
+.school-name {
+  margin-top: 10px;
+  color: var(--gold);
 }
 
-footer p {
-    color: #d7e1d9;
-    font-size: 13px;
-    margin-top: 8px;
+.footer small {
+  display: block;
+  margin-top: 18px;
+  color: #b9c6bb;
 }
 
-.copyright {
-    margin-top: 20px;
-    color: #91a99a;
-    font-size: 11px;
-    letter-spacing: 2px;
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ปุ่มกลับด้านบน */
-#backToTop {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: var(--gold);
-    color: var(--green);
-    font-size: 25px;
-    cursor: pointer;
+.back-to-top.show {
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
     display: none;
-    z-index: 100;
-}
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 18px 5%;
+    background: var(--green-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
 
-/* เอฟเฟกต์เลื่อน */
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: 0.8s ease;
-}
+  .nav-links.active {
+    display: flex;
+  }
 
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+  .hero {
+    min-height: 480px;
+  }
 
-/* รองรับมือถือ */
-@media (max-width: 850px) {
-    .profiles {
-        grid-template-columns: 1fr;
-    }
+  .profile-grid,
+  .education-grid,
+  .activity-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .profile-img {
+    height: 300px;
+  }
 
-    .nav-links {
-        gap: 12px;
-    }
+  .section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
 
-    .nav-links a {
-        font-size: 12px;
-    }
-}
+  .section-heading h2 {
+    font-size: 25px;
+  }
 
-@media (max-width: 650px) {
-    .navbar {
-        padding: 15px 5%;
-    }
+  .goal-content h2 {
+    font-size: 27px;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .goal-content h3 {
+    font-size: 19px;
+  }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background: var(--green);
-        flex-direction: column;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        font-size: 15px;
-    }
-
-    .hero {
-        min-height: 650px;
-        background-position: 60% center;
-    }
-
-    .hero-content {
-        padding-top: 220px;
-    }
-
-    .hero-content h1 {
-        font-size: 48px;
-    }
-
-    .hero-content h2 {
-        font-size: 20px;
-    }
-
-    .section {
-        padding: 65px 5%;
-    }
-
-    .section-title h2 {
-        font-size: 28px;
-    }
-
-    .profile-card {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-card img {
-        height: 320px;
-        min-height: 320px;
-    }
-
-    .activity-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .education-card {
-        align-items: flex-start;
-        padding: 18px;
-    }
-
-    .education-card h3 {
-        font-size: 16px;
-    }
-
-    .goal-content h2 {
-        font-size: 30px;
-    }
-
-    .goal-content h3 {
-        font-size: 19px;
-    }
-
-    .motto-section .section-title p {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 380px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+  .quote {
+    font-size: 16px;
+  }
 }
