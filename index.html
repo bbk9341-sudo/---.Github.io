@@ -1,298 +1,236 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="แฟ้มสะสมผลงาน นายพงศธร วุฒิวงค์ และนายวุฒิศักดิ์ เพิ่ม">
-    <title>Portfolio | Animal Science</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="แฟ้มสะสมผลงาน นายพงศธร วุฒิวงค์ และนายวุฒิศักดิ์ เพิ่ม">
+  <title>Portfolio | พงศธร และ วุฒิศักดิ์</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+  <header class="header">
+    <nav class="navbar container">
+      <a class="logo" href="#home">MY PORTFOLIO</a>
 
-    <!-- ส่วนหัวของเว็บไซต์ -->
-    <header class="hero" id="home">
-        <div class="hero-overlay"></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู">
+        ☰
+      </button>
 
-        <nav class="navbar">
-            <a href="#home" class="logo">MY PORTFOLIO</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">ประวัติส่วนตัว</a></li>
+        <li><a href="#education">การศึกษา</a></li>
+        <li><a href="#activities">กิจกรรม</a></li>
+        <li><a href="#skills">ความสามารถ</a></li>
+        <li><a href="#goal">เป้าหมาย</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู">
-                ☰
-            </button>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <p class="hero-small">WELCOME TO OUR PORTFOLIO</p>
+        <h1>แฟ้มสะสมผลงาน</h1>
+        <h2>PORTFOLIO</h2>
+        <p>เส้นทางแห่งการเรียนรู้ สู่การเกษตรและสัตวศาสตร์</p>
+        <a class="btn" href="#about">ดูข้อมูลของเรา</a>
+      </div>
+    </section>
 
-            <div class="nav-links" id="navLinks">
-                <a href="#about">ประวัติส่วนตัว</a>
-                <a href="#education">การศึกษา</a>
-                <a href="#activities">กิจกรรม</a>
-                <a href="#skills">ความสามารถ</a>
-                <a href="#goal">เป้าหมาย</a>
-            </div>
-        </nav>
+    <section class="section container" id="about">
+      <div class="section-heading">
+        <span>ABOUT US</span>
+        <h2>ประวัติส่วนตัว</h2>
+        <p>แนะนำตัวผู้จัดทำแฟ้มสะสมผลงาน</p>
+      </div>
 
-        <div class="hero-content reveal">
-            <p class="welcome">WELCOME TO OUR PORTFOLIO</p>
-            <h1>ANIMAL <span>SCIENCE</span></h1>
-            <h2>แฟ้มสะสมผลงาน สาขาสัตวศาสตร์</h2>
-            <p>
-                เรียนรู้ เข้าใจ และพัฒนาความรู้ด้านสัตว์
-                เพื่อก้าวสู่อนาคตในเส้นทางที่ใฝ่ฝัน
-            </p>
-            <a href="#about" class="button">เริ่มต้นทำความรู้จัก</a>
+      <div class="profile-grid">
+        <article class="profile-card">
+          <img
+            src="https://i.postimg.cc/D0xd65N1/IMG-6836.jpg"
+            alt="รูปนายพงศธร วุฒิวงค์"
+            class="profile-img"
+          >
+          <div class="profile-info">
+            <h3>นายพงศธร วุฒิวงค์</h3>
+            <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/2</p>
+            <p>เลขที่ 14</p>
+            <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+          </div>
+        </article>
+
+        <article class="profile-card">
+          <img
+            src="https://i.postimg.cc/Y9cXLncS/IMG-6839.jpg"
+            alt="รูปนายวุฒิศักดิ์ เพิ่ม"
+            class="profile-img"
+          >
+          <div class="profile-info">
+            <h3>นายวุฒิศักดิ์ เพิ่ม</h3>
+            <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/2</p>
+            <p>เลขที่ 31</p>
+            <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="about-text">
+        <h3>ข้อมูลและความสนใจ</h3>
+        <p>
+          พวกเรามีความสนใจด้านการเกษตรและการเลี้ยงสัตว์
+          ต้องการเรียนรู้เกี่ยวกับการดูแลสุขภาพสัตว์ การจัดการฟาร์ม
+          การเพาะพันธุ์สัตว์ และการนำความรู้ไปประยุกต์ใช้ในชีวิตจริง
+          โดยมุ่งมั่นพัฒนาตนเองและเก็บเกี่ยวประสบการณ์เพื่อศึกษาต่อในอนาคต
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-light" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span>EDUCATION</span>
+          <h2>ประวัติการศึกษา</h2>
+          <p>เส้นทางการเรียนรู้ของเรา</p>
         </div>
 
-        <div class="hero-bottom">PASSION • KNOWLEDGE • DEVELOPMENT</div>
-    </header>
+        <div class="education-grid">
+          <article class="info-card">
+            <div class="card-icon">🎓</div>
+            <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+            <p>ชั้นมัธยมศึกษาปีที่ 6/2</p>
+            <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+            <strong>GPAX 3.16</strong>
+          </article>
 
-    <main>
+          <article class="info-card">
+            <div class="card-icon">📚</div>
+            <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+            <p>แผนการเรียนศิลป์–ภาษา</p>
+            <strong>GPAX 3.12</strong>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- เกี่ยวกับผู้จัดทำ -->
-        <section id="about" class="section">
-            <div class="section-title reveal">
-                <span>ABOUT US</span>
-                <h2>ประวัติส่วนตัว</h2>
-                <p>ทำความรู้จักกับผู้จัดทำแฟ้มสะสมผลงาน</p>
-            </div>
+    <section class="section container" id="activities">
+      <div class="section-heading">
+        <span>ACTIVITIES</span>
+        <h2>กิจกรรมและประสบการณ์</h2>
+        <p>ประสบการณ์ที่ช่วยพัฒนาตนเอง</p>
+      </div>
 
-            <div class="profiles">
+      <div class="activity-grid">
+        <article class="activity-card">
+          <div class="activity-icon">🌳</div>
+          <h3>กิจกรรมปลูกป่าชายเลน</h3>
+          <p>
+            เข้าร่วมกิจกรรมปลูกป่าชายเลนเพื่ออนุรักษ์ทรัพยากรธรรมชาติ
+            เรียนรู้การดูแลสิ่งแวดล้อม และสร้างจิตสำนึกในการรักษาระบบนิเวศ
+          </p>
+        </article>
 
-                <article class="profile-card reveal">
-                    <img
-                        src="https://i.postimg.cc/D0xd65N1/IMG-6836.jpg"
-                        alt="นายพงศธร วุฒิวงค์">
+        <article class="activity-card">
+          <div class="activity-icon">🤝</div>
+          <h3>จิตอาสาพัฒนาวัดและบริการโรงทาน</h3>
+          <p>
+            ช่วยเตรียมอาหารและเครื่องดื่ม จัดสถานที่ ทำความสะอาด
+            และเก็บขยะ ได้เรียนรู้ความเสียสละ ความรับผิดชอบ
+            และการทำงานร่วมกับผู้อื่น
+          </p>
+        </article>
 
-                    <div class="profile-info">
-                        <span class="student-label">STUDENT 01</span>
-                        <h3>นายพงศธร วุฒิวงค์</h3>
-                        <p><strong>เลขที่:</strong> 14</p>
-                        <p><strong>ระดับชั้น:</strong> ม.6/2</p>
-                        <p><strong>เกรดเฉลี่ย:</strong> 3.16</p>
-                        <p><strong>ความสนใจ:</strong> สัตว์และการเกษตร</p>
-                    </div>
-                </article>
+        <article class="activity-card">
+          <div class="activity-icon">🌏</div>
+          <h3>กิจกรรมบูธอาเซียน</h3>
+          <p>
+            เป็นตัวแทนห้อง ม.6/2 ในการจัดกิจกรรมบูธอาเซียน
+            เรียนรู้ประเทศสมาชิก วัฒนธรรม และภาษา
+            พร้อมฝึกการทำงานเป็นทีม
+          </p>
+        </article>
 
-                <article class="profile-card reveal">
-                    <img
-                        src="https://i.postimg.cc/Y9cXLncS/IMG-6839.jpg"
-                        alt="นายวุฒิศักดิ์ เพิ่ม">
+        <article class="activity-card">
+          <div class="activity-icon">🥁</div>
+          <h3>สมาชิกวงโยธวาทิตโรงเรียน</h3>
+          <p>
+            เข้าร่วมกิจกรรมวงโยธวาทิต ฝึกวินัย ความตรงต่อเวลา
+            ความอดทน และการประสานงานร่วมกับสมาชิกในวง
+          </p>
+        </article>
+      </div>
+    </section>
 
-                    <div class="profile-info">
-                        <span class="student-label">STUDENT 02</span>
-                        <h3>นายวุฒิศักดิ์ เพิ่ม</h3>
-                        <p><strong>เลขที่:</strong> 31</p>
-                        <p><strong>ระดับชั้น:</strong> ม.6/2</p>
-                        <p><strong>ความสนใจ:</strong> สัตว์และการเกษตร</p>
-                        <p><strong>เป้าหมาย:</strong> ศึกษาต่อระดับมหาวิทยาลัย</p>
-                    </div>
-                </article>
+    <section class="section section-light" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span>MY SKILLS</span>
+          <h2>ความสามารถและความสนใจ</h2>
+        </div>
 
-            </div>
-        </section>
+        <div class="skills-grid">
+          <article class="info-card">
+            <div class="card-icon">💪</div>
+            <h3>ความอดทน</h3>
+            <p>พร้อมเรียนรู้และพยายามทำสิ่งต่าง ๆ ให้สำเร็จ</p>
+          </article>
 
-        <!-- ประวัติการศึกษา -->
-        <section id="education" class="section light-section">
-            <div class="section-title reveal">
-                <span>EDUCATION</span>
-                <h2>ประวัติการศึกษา</h2>
-                <p>เส้นทางการเรียนรู้และการพัฒนาตนเอง</p>
-            </div>
+          <article class="info-card">
+            <div class="card-icon">👥</div>
+            <h3>ความสามัคคี</h3>
+            <p>สามารถทำงานร่วมกับผู้อื่นและรับฟังความคิดเห็น</p>
+          </article>
 
-            <div class="education-list">
+          <article class="info-card">
+            <div class="card-icon">⭐</div>
+            <h3>ความรับผิดชอบ</h3>
+            <p>ตั้งใจทำหน้าที่ที่ได้รับมอบหมายให้ดีที่สุด</p>
+          </article>
+        </div>
 
-                <div class="education-card reveal">
-                    <div class="education-icon">🎓</div>
-                    <div>
-                        <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
-                        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
-                        <p>กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6/2</p>
-                        <p>เกรดเฉลี่ยสะสม 3.16</p>
-                    </div>
-                </div>
+        <div class="hobby-box">
+          <h3>งานอดิเรก</h3>
+          <p>🎮 เล่นเกม　🎧 ฟังเพลง</p>
+        </div>
+      </div>
+    </section>
 
-                <div class="education-card reveal">
-                    <div class="education-icon">📚</div>
-                    <div>
-                        <h3>ระดับมัธยมศึกษาตอนต้น</h3>
-                        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
-                        <p>แผนการเรียน ศิลป์–ภาษา</p>
-                        <p>เกรดเฉลี่ยสะสม 3.12</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ผลงานและกิจกรรม -->
-        <section id="activities" class="section">
-            <div class="section-title reveal">
-                <span>MY ACTIVITIES</span>
-                <h2>ผลงานและกิจกรรม</h2>
-                <p>ประสบการณ์ที่ช่วยพัฒนาความรู้และทักษะ</p>
-            </div>
-
-            <div class="activity-grid">
-
-                <article class="activity-card reveal">
-                    <div class="activity-picture volunteer">
-                        <span>VOLUNTEER</span>
-                    </div>
-                    <div class="activity-info">
-                        <h3>กิจกรรมจิตอาสาพัฒนาวัดและบริการโรงทาน</h3>
-                        <p>
-                            เข้าร่วมกิจกรรมจิตอาสา ช่วยจัดเตรียมอาหารและเครื่องดื่ม
-                            จัดสถานที่ ดูแลความสะอาด เก็บขยะ และบำรุงรักษาบริเวณวัด
-                        </p>
-                        <p>
-                            <strong>สิ่งที่ได้รับ:</strong>
-                            ฝึกความเสียสละ ความรับผิดชอบ และการทำงานร่วมกับผู้อื่น
-                        </p>
-                    </div>
-                </article>
-
-                <article class="activity-card reveal">
-                    <div class="activity-picture asean">
-                        <span>ASEAN</span>
-                    </div>
-                    <div class="activity-info">
-                        <h3>กิจกรรมบูธอาเซียน ตัวแทนห้อง ม.6/2</h3>
-                        <p>
-                            เข้าร่วมกิจกรรมจัดบูธอาเซียน ศึกษาข้อมูลประเทศสมาชิก
-                            วัฒนธรรม และภาษาของประเทศต่าง ๆ
-                        </p>
-                        <p>
-                            <strong>สิ่งที่ได้รับ:</strong>
-                            เรียนรู้ความหลากหลายทางวัฒนธรรมและฝึกการทำงานเป็นทีม
-                        </p>
-                    </div>
-                </article>
-
-                <article class="activity-card reveal">
-                    <div class="activity-picture band">
-                        <span>MARCHING BAND</span>
-                    </div>
-                    <div class="activity-info">
-                        <h3>สมาชิกวงโยธวาทิตของโรงเรียน</h3>
-                        <p>
-                            เข้าร่วมกิจกรรมวงโยธวาทิต ฝึกซ้อมดนตรี
-                            และร่วมกิจกรรมต่าง ๆ ของโรงเรียน
-                        </p>
-                        <p>
-                            <strong>สิ่งที่ได้รับ:</strong>
-                            ฝึกวินัย ความอดทน ความตรงต่อเวลา และความสามัคคี
-                        </p>
-                    </div>
-                </article>
-
-                <article class="activity-card reveal">
-                    <div class="activity-picture mangrove">
-                        <span>ENVIRONMENT</span>
-                    </div>
-                    <div class="activity-info">
-                        <h3>กิจกรรมปลูกป่าชายเลน</h3>
-                        <p>
-                            เข้าร่วมกิจกรรมปลูกป่าชายเลน เพื่อเพิ่มพื้นที่สีเขียว
-                            และส่งเสริมการอนุรักษ์ทรัพยากรธรรมชาติ
-                        </p>
-                        <p>
-                            <strong>สิ่งที่ได้รับ:</strong>
-                            ตระหนักถึงความสำคัญของสิ่งแวดล้อมและการดูแลธรรมชาติ
-                        </p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- ทักษะ -->
-        <section id="skills" class="section light-section">
-            <div class="section-title reveal">
-                <span>MY SKILLS</span>
-                <h2>ความสามารถและความสนใจ</h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-card reveal">
-                    <div>💪</div>
-                    <h3>ความอดทน</h3>
-                    <p>มีความพยายามและพร้อมเรียนรู้สิ่งใหม่ ๆ</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div>🤝</div>
-                    <h3>ความสามัคคี</h3>
-                    <p>สามารถทำงานร่วมกับผู้อื่นได้</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div>⭐</div>
-                    <h3>ความรับผิดชอบ</h3>
-                    <p>ตั้งใจทำหน้าที่ที่ได้รับมอบหมาย</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div>🎮</div>
-                    <h3>งานอดิเรก</h3>
-                    <p>เล่นเกมและฟังเพลง</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- เป้าหมายในอนาคต -->
-        <section id="goal" class="goal-section">
-            <div class="goal-overlay"></div>
-
-            <div class="goal-content reveal">
-                <span>MY FUTURE GOAL</span>
-                <h2>เป้าหมายในอนาคต</h2>
-                <div class="animal-icons">🐄 🐃 🐓</div>
-
-                <h3>คณะเกษตรศาสตร์ สาขาสัตวศาสตร์</h3>
-
-                <p>
-                    มีความตั้งใจที่จะศึกษาต่อในคณะเกษตรศาสตร์
-                    สาขาสัตวศาสตร์ เพื่อเรียนรู้เกี่ยวกับการเลี้ยงสัตว์
-                    การดูแลสุขภาพสัตว์ การปรับปรุงพันธุ์สัตว์
-                    และการจัดการฟาร์มอย่างมีประสิทธิภาพ
-                </p>
-
-                <p>
-                    ต้องการนำความรู้ที่ได้รับไปพัฒนาตนเอง
-                    และต่อยอดอาชีพในอนาคต รวมถึงสานต่ออาชีพเดิมของคุณพ่อ
-                </p>
-            </div>
-        </section>
-
-        <!-- คติประจำใจ -->
-        <section class="motto-section">
-            <div class="section-title reveal">
-                <span>MY MOTTO</span>
-                <h2>คติประจำใจ</h2>
-                <p>
-                    “ความสำเร็จเริ่มต้นจากความพยายาม
-                    และเติบโตได้ด้วยความไม่ยอมแพ้”
-                </p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ส่วนท้ายเว็บไซต์ -->
-    <footer>
-        <h2>THANK YOU</h2>
-        <p>จัดทำโดย นายพงศธร วุฒิวงค์ และ นายวุฒิศักดิ์ เพิ่ม</p>
-        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
-        <p class="copyright">
-            © <span id="year"></span> PORTFOLIO | ANIMAL SCIENCE
+    <section class="goal-section" id="goal">
+      <div class="goal-overlay"></div>
+      <div class="goal-content container">
+        <span>MY FUTURE GOAL</span>
+        <h2>เป้าหมายในอนาคต</h2>
+        <h3>คณะเกษตรศาสตร์ สาขาสัตวศาสตร์</h3>
+        <p>
+          มีความตั้งใจศึกษาต่อในสาขาสัตวศาสตร์
+          เพื่อเรียนรู้เกี่ยวกับการเลี้ยงสัตว์ การดูแลสุขภาพสัตว์
+          การปรับปรุงพันธุ์ และการจัดการฟาร์มอย่างมีประสิทธิภาพ
+          พร้อมนำความรู้ไปต่อยอดอาชีพด้านการเกษตรและการเลี้ยงสัตว์ในอนาคต
         </p>
-    </footer>
+        <div class="quote">
+          “ความสำเร็จเริ่มต้นจากความพยายาม
+          และเติบโตได้ด้วยความไม่ยอมแพ้”
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <button id="backToTop" aria-label="กลับขึ้นด้านบน">↑</button>
+  <footer class="footer">
+    <h3>จัดทำโดย</h3>
+    <p>นายพงศธร วุฒิวงค์ เลขที่ 14</p>
+    <p>นายวุฒิศักดิ์ เพิ่ม เลขที่ 31</p>
+    <p>ชั้นมัธยมศึกษาปีที่ 6/2</p>
+    <p class="school-name">
+      โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก
+    </p>
+    <small>© <span id="year"></span> Portfolio</small>
+  </footer>
 
-    <script src="script.js"></script>
+  <button id="backToTop" class="back-to-top" aria-label="กลับขึ้นด้านบน">
+    ↑
+  </button>
+
+  <script src="./script.js"></script>
 </body>
 </html>
